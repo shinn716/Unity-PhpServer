@@ -29,6 +29,7 @@ public class Sample : MonoBehaviour
     [ContextMenu("UploadTest")]
     void UploadTest()
     {
+        rimg_qrcode.gameObject.transform.GetChild(0).GetComponent<Text>().text = "LOADING...";
         var file = Path.Combine(phpServerManager.m_uploadPath, "03.jpg");
         StartCoroutine(phpServerManager.Upload(file, "http://psquare.io/test/api/upload.php"));
     }
@@ -39,6 +40,7 @@ public class Sample : MonoBehaviour
         {
             print("GetUploadEvent complete! " + phpServerManager.UploadComplete());
             rimg_qrcode.texture = Shinn.QRcodeHelper.GetQRcodeTexture(phpServerManager.UploadComplete());
+            rimg_qrcode.gameObject.transform.GetChild(0).GetComponent<Text>().text = string.Empty;
         }
     }
 }
