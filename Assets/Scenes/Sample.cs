@@ -23,7 +23,7 @@ public class Sample : MonoBehaviour
     [ContextMenu("DownloadTest")]
     void DownloadTest()
     {
-        StartCoroutine(phpServerManager.Download("http://psquare.io/test/api/upload/01.jpg"));
+        StartCoroutine(phpServerManager.Download("http://xxx.io/test/api/upload/01.jpg"));
     }
 
     [ContextMenu("UploadTest")]
@@ -31,7 +31,7 @@ public class Sample : MonoBehaviour
     {
         rimg_qrcode.gameObject.transform.GetChild(0).GetComponent<Text>().text = "LOADING...";
         var file = Path.Combine(phpServerManager.m_uploadPath, "03.jpg");
-        StartCoroutine(phpServerManager.Upload(file, "http://psquare.io/test/api/upload.php"));
+        StartCoroutine(phpServerManager.Upload(file, "http://xxx.io/test/api/upload.php"));
     }
 
     void UploadEvent()
